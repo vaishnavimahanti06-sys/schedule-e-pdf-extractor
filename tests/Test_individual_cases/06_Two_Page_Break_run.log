@@ -1,0 +1,32 @@
+2026-09-10 23:51:05.138 Python[20195:266523] 2026-09-10 23:51:05.138157 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier
+
+============================================
+SCHEDULE E PROCESSING
+============================================
+---- CHECKING NATIVE PDF TEXT QUALITY ----
+{'total_chars': 1765, 'useful_chars': 1399, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 20, 'schedule_e_found': True, 'part_ii_found': True, 'ocr_required': False, 'reasons': []}
+---- DETERMINING FILE ATTRIBUTES ----
+---- FILE ATTRIBUTES ----
+{'landscape': False, 'ssn_box': False, 'encoded': False, 'duplicated': False, 'two_line_entities': False, 'data_spans_rows': False, 'delimiter': False, 'delimiter_char': None, 'ocr': {'total_chars': 1765, 'useful_chars': 1399, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 20, 'schedule_e_found': True, 'part_ii_found': True, 'ocr_required': False, 'reasons': [], 'force_ocr_used': False, 'processed_pdf': '/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/work/Test_2_Mixed_files/schedule_e_test_20rows_processed.pdf'}}
+---- EXTRACTING DATA FROM PDF ----
+---- REMOVING FOOTERS ----
+---- FINDING AND CLASSIFYING HEADERS ----
+---- REMOVING REPEATED HEADERS ----
+Schedule E dynamic column detection
+  P/S center: 238.67; EIN center: 292.35
+  Numeric centers: [361.01, 441.01, 521.01, 609.34, 678.23]
+  Boundaries: [228.67, 265.51, 326.68, 401.01, 481.01, 565.17, 643.79]
+  Detected columns: 8
+---- SCANNING FOR COLUMN AND ROW BREAKS ----
+---- CLEANING TABLE ENTRIES ----
+                                    NAME P/S         EIN  PASSIVE LOSS  PASSIVE INCOME  NON-PASSIVE LOSS  SECTION 179 DEDUCTION  NON-PASSIVE INCOME
+0  Pinnacle Energy Resources Partnership   S  70-7947389          3409               0                 0                    148               25085
+1       Quarrystone Real Estate Partners   S  99-7245765          3012               0               177                      0               27388
+2     Cedar Hollow Rental Properties LLC   P  75-8381348          1031            6750                 0                      0               44848
+3       Golden Prairie Farms Partnership   P  61-2621871          3122               0              2445                   1820                   0
+4       Golden Prairie Farms Partnership   S  65-3556665          2707            7819              1931                      0                   0
+---- EXTRACTION CONFIDENCE: 100.0% ----
+HIGH CONFIDENCE
+---- OUTPUTTING CSV FILE ----
+/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_2_Mixed_files/schedule_e_test_20rows.csv
+SUCCESS confidence=1.000

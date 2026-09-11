@@ -1,0 +1,6 @@
+pdfplumber
+numpy
+pandas
+pypdf
+pymupdf
+pymupdf4llm

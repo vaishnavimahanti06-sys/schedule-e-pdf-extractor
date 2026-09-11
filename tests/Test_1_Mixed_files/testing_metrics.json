@@ -1,0 +1,81 @@
+{
+  "summary": {
+    "files_attempted": 5,
+    "files_exported": 5,
+    "files_safely_rejected": 0,
+    "exported_rows": 38,
+    "identity_valid_rows": 38,
+    "numeric_valid_cells": 190,
+    "numeric_total_cells": 190,
+    "file_export_rate_pct": 100.0,
+    "identity_valid_pct": 100.0,
+    "numeric_valid_pct": 100.0
+  },
+  "files": [
+    {
+      "input_file": "mixed_01.pdf",
+      "output_file": "mixed_01.csv",
+      "output_rows": 7,
+      "schema_valid": true,
+      "identity_valid_rows": 7,
+      "identity_valid_pct": 100.0,
+      "numeric_valid_cells": 35,
+      "numeric_total_cells": 35,
+      "numeric_valid_pct": 100.0,
+      "duplicate_eins": 0,
+      "status": "exported"
+    },
+    {
+      "input_file": "mixed_02.pdf",
+      "output_file": "mixed_02.csv",
+      "output_rows": 7,
+      "schema_valid": true,
+      "identity_valid_rows": 7,
+      "identity_valid_pct": 100.0,
+      "numeric_valid_cells": 35,
+      "numeric_total_cells": 35,
+      "numeric_valid_pct": 100.0,
+      "duplicate_eins": 0,
+      "status": "exported"
+    },
+    {
+      "input_file": "mixed_03.pdf",
+      "output_file": "mixed_03.csv",
+      "output_rows": 8,
+      "schema_valid": true,
+      "identity_valid_rows": 8,
+      "identity_valid_pct": 100.0,
+      "numeric_valid_cells": 40,
+      "numeric_total_cells": 40,
+      "numeric_valid_pct": 100.0,
+      "duplicate_eins": 0,
+      "status": "exported"
+    },
+    {
+      "input_file": "mixed_04.pdf",
+      "output_file": "mixed_04.csv",
+      "output_rows": 8,
+      "schema_valid": true,
+      "identity_valid_rows": 8,
+      "identity_valid_pct": 100.0,
+      "numeric_valid_cells": 40,
+      "numeric_total_cells": 40,
+      "numeric_valid_pct": 100.0,
+      "duplicate_eins": 0,
+      "status": "exported"
+    },
+    {
+      "input_file": "mixed_05.pdf",
+      "output_file": "mixed_05.csv",
+      "output_rows": 8,
+      "schema_valid": true,
+      "identity_valid_rows": 8,
+      "identity_valid_pct": 100.0,
+      "numeric_valid_cells": 40,
+      "numeric_total_cells": 40,
+      "numeric_valid_pct": 100.0,
+      "duplicate_eins": 0,
+      "status": "exported"
+    }
+  ]
+}

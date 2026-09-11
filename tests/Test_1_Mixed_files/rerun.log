@@ -1,0 +1,199 @@
+2026-09-10 23:19:32.568 Python[18440:232356] 2026-09-10 23:19:32.568659 [W:onnxruntime:Default, telemetry.cc:800 operator()] Failed to persist telemetry device ID; using an in-memory identifier
+2026-09-10 23:19:41.593 Python[18440:232394] NetworkStorageDB:_openDBReadConnections: failed to open read connection to DB @ /Users/vaishnavimahanti/Library/Caches/org.python.python/Cache.db.  Error=14. Cause=unable to open database file
+2026-09-10 23:19:41.593 Python[18440:232394] The read-connection to the DB=/Users/vaishnavimahanti/Library/Caches/org.python.python/Cache.db is NOT valid.  Unable to determine schema version.
+2026-09-10 23:19:41.593 Python[18440:232394] NetworkStorageDB:_openDBWriteConnections: failed to open write connection to DB @ /Users/vaishnavimahanti/Library/Caches/org.python.python/Cache.db.  Error=14. Cause=unable to open database file
+2026-09-10 23:19:41.593 Python[18440:232394] DEBUG: there is no SQL cache DB located at /Users/vaishnavimahanti/Library/Caches/org.python.python/Cache.db.
+2026-09-10 23:19:41.593 Python[18440:232394] DEBUG: there is no SQL cache DB located at /Users/vaishnavimahanti/Library/Caches/org.python.python/Cache.db-shm.
+2026-09-10 23:19:41.594 Python[18440:232394] DEBUG: there is no SQL cache DB located at /Users/vaishnavimahanti/Library/Caches/org.python.python/Cache.db-wal.
+
+################################################
+PROCESSING: mixed_01.pdf
+################################################
+
+============================================
+SCHEDULE E PROCESSING
+============================================
+---- CHECKING NATIVE PDF TEXT QUALITY ----
+{'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text']}
+---- OCR: ORIENTATION, CLAHE, SEARCHABLE PDF ----
+---- DETERMINING FILE ATTRIBUTES ----
+---- FILE ATTRIBUTES ----
+{'landscape': False, 'ssn_box': True, 'encoded': False, 'duplicated': False, 'two_line_entities': True, 'data_spans_rows': True, 'delimiter': False, 'delimiter_char': None, 'ocr': {'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text'], 'ocr_pages': [{'page': 1, 'rotation': 0, 'orientation_scores': {0: 5, 90: 1, 180: 0, 270: 0}, 'raw_score': 44, 'clahe_score': 44, 'table_rules_removed_score': 44, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}, {'page': 2, 'rotation': 0, 'orientation_scores': {0: 9, 90: 0, 180: 1, 270: 0}, 'raw_score': 49, 'clahe_score': 49, 'table_rules_removed_score': 49, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}], 'ocr_chars': 1469, 'ocr_text_length': 1744, 'force_ocr_used': True, 'processed_pdf': '/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/work/Test_1_Mixed_files/mixed_01_processed.pdf'}}
+---- EXTRACTING DATA FROM PDF ----
+---- REMOVING FOOTERS ----
+---- FINDING AND CLASSIFYING HEADERS ----
+---- REMOVING REPEATED HEADERS ----
+---- RECONSTITUTING TABLE FROM NAME / P-S-EIN LINE PAIRS ----
+Schedule E dynamic column detection
+  P/S center: 1788.84; EIN center: 2121.99
+  Numeric centers: [2360.31, 2676.44, 2969.66, 3297.88, 3615.75]
+  Boundaries: [1739.84, 1955.42, 2241.15, 2518.37, 2823.05, 3133.77, 3456.81]
+  Detected columns: 8
+---- SCANNING FOR COLUMN AND ROW BREAKS ----
+---- CLEANING TABLE ENTRIES ----
+                                        NAME P/S         EIN  PASSIVE LOSS  PASSIVE INCOME  NON-PASSIVE LOSS  SECTION 179 DEDUCTION  NON-PASSIVE INCOME
+0          Summit Ridge Development Partners   S  15-1335601          4154               0              1867                   1883                   0
+1  Meadowlark Restaurant Group S Corporation   P  23-9804442             0            9566               494                      0               49150
+2      Pinnacle Energy Resources Partnership   P  51-7098200             0           35187              2796                      0               45116
+3              Redwood Family Investments LP   P  57-4746540          3688           30802              1764                      0                   0
+4       Lakeside Manufacturing S Corporation   P  57-5550331             0               0              1665                    161               31940
+---- EXTRACTION CONFIDENCE: 100.0% ----
+HIGH CONFIDENCE
+---- OUTPUTTING CSV FILE ----
+/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_01.csv
+SUCCESS: /Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_01.csv
+CONFIDENCE: 100.0%
+STATUS: HIGH CONFIDENCE
+
+################################################
+PROCESSING: mixed_02.pdf
+################################################
+
+============================================
+SCHEDULE E PROCESSING
+============================================
+---- CHECKING NATIVE PDF TEXT QUALITY ----
+{'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text']}
+---- OCR: ORIENTATION, CLAHE, SEARCHABLE PDF ----
+---- DETERMINING FILE ATTRIBUTES ----
+---- FILE ATTRIBUTES ----
+{'landscape': False, 'ssn_box': True, 'encoded': False, 'duplicated': False, 'two_line_entities': True, 'data_spans_rows': True, 'delimiter': False, 'delimiter_char': None, 'ocr': {'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text'], 'ocr_pages': [{'page': 1, 'rotation': 0, 'orientation_scores': {0: 9, 90: 0, 180: 1, 270: 1}, 'raw_score': 44, 'clahe_score': 44, 'table_rules_removed_score': 44, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}, {'page': 2, 'rotation': 270, 'orientation_scores': {0: 0, 90: 1, 180: 0, 270: 10}, 'raw_score': 49, 'clahe_score': 49, 'table_rules_removed_score': 49, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}], 'ocr_chars': 1442, 'ocr_text_length': 1714, 'force_ocr_used': True, 'processed_pdf': '/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/work/Test_1_Mixed_files/mixed_02_processed.pdf'}}
+---- EXTRACTING DATA FROM PDF ----
+---- REMOVING FOOTERS ----
+---- FINDING AND CLASSIFYING HEADERS ----
+---- REMOVING REPEATED HEADERS ----
+---- RECONSTITUTING TABLE FROM NAME / P-S-EIN LINE PAIRS ----
+Schedule E dynamic column detection
+  P/S center: 1790.34; EIN center: 2122.88
+  Numeric centers: [2360.31, 2677.67, 2970.98, 3296.95, 3616.94]
+  Boundaries: [1741.62, 1956.61, 2241.59, 2518.99, 2824.33, 3133.97, 3456.95]
+  Detected columns: 8
+---- SCANNING FOR COLUMN AND ROW BREAKS ----
+---- CLEANING TABLE ENTRIES ----
+                                        NAME P/S         EIN  PASSIVE LOSS  PASSIVE INCOME  NON-PASSIVE LOSS  SECTION 179 DEDUCTION  NON-PASSIVE INCOME
+0         Harborview Investment Group S Corp   P  68-1196887          2936           45762                 0                      0                3570
+1       Lakeside Manufacturing S Corporation   P  22-9358360          2877           12176                 0                      0               14337
+2  Meadowlark Restaurant Group S Corporation   S  82-6413281          3848               0                 0                    476               16394
+3         Harborview Investment Group S Corp   S  14-1136872          4081               0              2821                      0               16089
+4              Redwood Family Investments LP   S  71-1623343             0               0              1881                    608               15084
+---- EXTRACTION CONFIDENCE: 100.0% ----
+HIGH CONFIDENCE
+---- OUTPUTTING CSV FILE ----
+/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_02.csv
+SUCCESS: /Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_02.csv
+CONFIDENCE: 100.0%
+STATUS: HIGH CONFIDENCE
+
+################################################
+PROCESSING: mixed_03.pdf
+################################################
+
+============================================
+SCHEDULE E PROCESSING
+============================================
+---- CHECKING NATIVE PDF TEXT QUALITY ----
+{'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text']}
+---- OCR: ORIENTATION, CLAHE, SEARCHABLE PDF ----
+---- DETERMINING FILE ATTRIBUTES ----
+---- FILE ATTRIBUTES ----
+{'landscape': False, 'ssn_box': True, 'encoded': False, 'duplicated': False, 'two_line_entities': False, 'data_spans_rows': False, 'delimiter': False, 'delimiter_char': None, 'ocr': {'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text'], 'ocr_pages': [{'page': 1, 'rotation': 0, 'orientation_scores': {0: 9, 90: 0, 180: 1, 270: 0}, 'raw_score': 49, 'clahe_score': 49, 'table_rules_removed_score': 49, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}, {'page': 2, 'rotation': 0, 'orientation_scores': {0: 8, 90: 1, 180: 1, 270: 1}, 'raw_score': 49, 'clahe_score': 49, 'table_rules_removed_score': 49, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}], 'ocr_chars': 1451, 'ocr_text_length': 1730, 'force_ocr_used': True, 'processed_pdf': '/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/work/Test_1_Mixed_files/mixed_03_processed.pdf'}}
+---- EXTRACTING DATA FROM PDF ----
+---- REMOVING FOOTERS ----
+---- FINDING AND CLASSIFYING HEADERS ----
+---- REMOVING REPEATED HEADERS ----
+Schedule E dynamic column detection
+  P/S center: 1325.62; EIN center: 1651.07
+  Numeric centers: [2008.65, 2396.46, 2758.65, 3132.98, 3544.2]
+  Boundaries: [1277.33, 1488.35, 1829.86, 2202.56, 2577.56, 2945.81, 3338.59]
+  Detected columns: 8
+---- SCANNING FOR COLUMN AND ROW BREAKS ----
+---- CLEANING TABLE ENTRIES ----
+                                        NAME P/S         EIN  PASSIVE LOSS  PASSIVE INCOME  NON-PASSIVE LOSS  SECTION 179 DEDUCTION  NON-PASSIVE INCOME
+0           Sterling Oak Capital Partners LP   P  10-2748318             0           37187              1925                      0               38045
+1                     Blue Ridge Holdings LP   P  43-1397017          2589               0                 0                    603               35822
+2                     Blue Ridge Holdings LP   S  35-3492077             0           26951              1466                      0                3373
+3  Meadowlark Restaurant Group S Corporation   S  34-6213612             0           33258               494                    747                   0
+4                    Coastal Timber Partners   S  37-7128255          1987               0               651                    560                   0
+---- EXTRACTION CONFIDENCE: 100.0% ----
+HIGH CONFIDENCE
+---- OUTPUTTING CSV FILE ----
+/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_03.csv
+SUCCESS: /Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_03.csv
+CONFIDENCE: 100.0%
+STATUS: HIGH CONFIDENCE
+
+################################################
+PROCESSING: mixed_04.pdf
+################################################
+
+============================================
+SCHEDULE E PROCESSING
+============================================
+---- CHECKING NATIVE PDF TEXT QUALITY ----
+{'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text']}
+---- OCR: ORIENTATION, CLAHE, SEARCHABLE PDF ----
+---- DETERMINING FILE ATTRIBUTES ----
+---- FILE ATTRIBUTES ----
+{'landscape': False, 'ssn_box': True, 'encoded': False, 'duplicated': False, 'two_line_entities': False, 'data_spans_rows': False, 'delimiter': False, 'delimiter_char': None, 'ocr': {'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text'], 'ocr_pages': [{'page': 1, 'rotation': 0, 'orientation_scores': {0: 9, 90: 0, 180: 0, 270: 1}, 'raw_score': 49, 'clahe_score': 49, 'table_rules_removed_score': 49, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}, {'page': 2, 'rotation': 0, 'orientation_scores': {0: 9, 90: 1, 180: 0, 270: 1}, 'raw_score': 34, 'clahe_score': 34, 'table_rules_removed_score': 34, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}], 'ocr_chars': 1487, 'ocr_text_length': 1762, 'force_ocr_used': True, 'processed_pdf': '/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/work/Test_1_Mixed_files/mixed_04_processed.pdf'}}
+---- EXTRACTING DATA FROM PDF ----
+---- REMOVING FOOTERS ----
+---- FINDING AND CLASSIFYING HEADERS ----
+---- REMOVING REPEATED HEADERS ----
+Schedule E dynamic column detection
+  P/S center: 1325.60; EIN center: 1651.16
+  Numeric centers: [2008.65, 2383.65, 2758.65, 3133.97, 3545.46]
+  Boundaries: [1277.3, 1488.38, 1829.91, 2196.15, 2571.15, 2946.31, 3339.71]
+  Detected columns: 8
+---- SCANNING FOR COLUMN AND ROW BREAKS ----
+---- CLEANING TABLE ENTRIES ----
+                                    NAME P/S         EIN  PASSIVE LOSS  PASSIVE INCOME  NON-PASSIVE LOSS  SECTION 179 DEDUCTION  NON-PASSIVE INCOME
+0  Pinnacle Energy Resources Partnership   S  70-7947389          3409               0                 0                    148               25085
+1       Quarrystone Real Estate Partners   S  99-7245765          3012               0               177                      0               27388
+2     Cedar Hollow Rental Properties LLC   P  75-8381348          1031            6750                 0                      0               44848
+3       Golden Prairie Farms Partnership   P  61-2621871          3122               0              2445                   1820                   0
+4       Golden Prairie Farms Partnership   S  65-3556665          2707            7819              1931                      0                   0
+---- EXTRACTION CONFIDENCE: 100.0% ----
+HIGH CONFIDENCE
+---- OUTPUTTING CSV FILE ----
+/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_04.csv
+SUCCESS: /Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_04.csv
+CONFIDENCE: 100.0%
+STATUS: HIGH CONFIDENCE
+
+################################################
+PROCESSING: mixed_05.pdf
+################################################
+
+============================================
+SCHEDULE E PROCESSING
+============================================
+---- CHECKING NATIVE PDF TEXT QUALITY ----
+{'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text']}
+---- OCR: ORIENTATION, CLAHE, SEARCHABLE PDF ----
+---- DETERMINING FILE ATTRIBUTES ----
+---- FILE ATTRIBUTES ----
+{'landscape': False, 'ssn_box': True, 'encoded': False, 'duplicated': False, 'two_line_entities': False, 'data_spans_rows': False, 'delimiter': False, 'delimiter_char': None, 'ocr': {'total_chars': 0, 'useful_chars': 0, 'bad_chars': 0, 'bad_ratio': 0.0, 'private_chars': 0, 'replacement_chars': 0, 'ein_count': 0, 'schedule_e_found': False, 'part_ii_found': False, 'ocr_required': True, 'reasons': ['Very little native text', 'Very little readable text'], 'ocr_pages': [{'page': 1, 'rotation': 0, 'orientation_scores': {0: 7, 90: 0, 180: 0, 270: 0}, 'raw_score': 49, 'clahe_score': 49, 'table_rules_removed_score': 49, 'selected_treatment': 'raw_grayscale', 'width': 5313, 'height': 6875}, {'page': 2, 'rotation': 0, 'orientation_scores': {0: 4, 90: 0, 180: 1, 270: 0}, 'raw_score': 7, 'clahe_score': 7, 'table_rules_removed_score': 49, 'selected_treatment': 'table_rules_removed', 'width': 5313, 'height': 6875}], 'ocr_chars': 1471, 'ocr_text_length': 1749, 'force_ocr_used': True, 'processed_pdf': '/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/work/Test_1_Mixed_files/mixed_05_processed.pdf'}}
+---- EXTRACTING DATA FROM PDF ----
+---- REMOVING FOOTERS ----
+---- FINDING AND CLASSIFYING HEADERS ----
+---- REMOVING REPEATED HEADERS ----
+Schedule E dynamic column detection
+  P/S center: 1325.57; EIN center: 1650.56
+  Numeric centers: [2008.65, 2396.46, 2733.98, 3158.32, 3546.45]
+  Boundaries: [1277.26, 1488.06, 1829.61, 2202.56, 2565.22, 2946.15, 3352.39]
+  Detected columns: 8
+---- SCANNING FOR COLUMN AND ROW BREAKS ----
+---- CLEANING TABLE ENTRIES ----
+                                   NAME P/S         EIN  PASSIVE LOSS  PASSIVE INCOME  NON-PASSIVE LOSS  SECTION 179 DEDUCTION  NON-PASSIVE INCOME
+0  Willowbrook Agricultural Holdings LP   S  74-4605892             0           44254               337                      0               34653
+1  Lakeside Manufacturing S Corporation   S  46-4115479             0           35264               487                      0               10877
+2  Lakeside Manufacturing S Corporation   S  42-4644905             0           27006               660                      0               17728
+3    Cedar Hollow Rental Properties LLC   S  44-9653054             0           23583              2330                   1748                   0
+4             Maple Street Ventures LLC   P  56-5985250          3309               0                 0                    332               24723
+---- EXTRACTION CONFIDENCE: 100.0% ----
+HIGH CONFIDENCE
+---- OUTPUTTING CSV FILE ----
+/Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_05.csv
+SUCCESS: /Users/vaishnavimahanti/Desktop/schedule-e-pdf-extractor/output/Test_1_Mixed_files/mixed_05.csv
+CONFIDENCE: 100.0%
+STATUS: HIGH CONFIDENCE

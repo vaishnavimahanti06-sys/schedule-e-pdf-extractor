@@ -1,0 +1,15 @@
+{
+  "input_file": "schedule_e_test_20rows.pdf",
+  "expected_rows": 20,
+  "exported_rows": 20,
+  "row_recall_pct": 100.0,
+  "identity_valid_rows": 20,
+  "identity_valid_pct": 100.0,
+  "numeric_valid_cells": 100,
+  "numeric_total_cells": 100,
+  "numeric_valid_pct": 100.0,
+  "required_schema_valid": true,
+  "duplicate_eins": 10,
+  "confidence": 1.0,
+  "status": "passed"
+}
