@@ -5,6 +5,7 @@ from .part1 import *
 
 
 def shift_rows(in_line_df):
+    """Align name and EIN lines to the same reconstructed table-row geometry."""
 
     line_df = in_line_df.copy()
 
@@ -73,6 +74,7 @@ def join_to_char_df_uncollapsed(
     in_line_df,
     in_char_df
 ):
+    """Map character geometry into logical rows when entities span source lines."""
 
     line_df = in_line_df.copy()
     char_df = in_char_df.copy()
@@ -283,6 +285,7 @@ def join_to_char_df_uncollapsed(
     )
 
     def _calc_concat_offsets(group):
+        """Calculate offsets that place line fragments consecutively in one row."""
 
         comb_ln = group["comb_line_num"].iloc[0]
 
@@ -462,6 +465,7 @@ def join_to_char_df_normal(
     in_line_df,
     in_char_df
 ):
+    """Join normal one-line row metadata back to the source characters."""
 
     line_df = in_line_df.copy()
     char_df = in_char_df.copy()
@@ -597,6 +601,7 @@ def join_two_line_entity_chars(in_line_df, in_char_df):
 
 
 def words(in_char_df):
+    """Group positioned OCR characters into words for column assignment."""
 
     df = in_char_df.copy()
 
@@ -686,6 +691,7 @@ def columns_header_delimiter(
     in_char_df,
     in_header_df
 ):
+    """Infer column boundaries from spacing in the final header line."""
 
     final_headers = (
         in_header_df[
@@ -779,11 +785,14 @@ def columns_words_no_delimiter(
         raise ValueError("Dynamic column detection found no data-row words.")
     words_df["norm"] = words_df["text"].map(lambda value: re.sub(r"\s+", "", str(value).upper()))
     def positions(pattern):
+        """Return horizontal centers for words matching an anchor pattern."""
         matched = words_df["norm"].str.fullmatch(pattern, na=False)
         return ((words_df.loc[matched, "x0"] + words_df.loc[matched, "x1"]) / 2.0).tolist()
     def center(values):
+        """Return the median horizontal center for a set of anchor positions."""
         return float(np.median(values)) if values else None
     def clusters(values):
+        """Cluster nearby anchor positions into distinct physical columns."""
         if not values:
             return []
         tolerance = max(char_width * 4.0, 10.0)
@@ -834,6 +843,7 @@ def assign_words_to_columns(
     words_df,
     boundaries
 ):
+    """Assign each word to a dynamic column using its horizontal center."""
     if not boundaries:
         raise ValueError("assign_words_to_columns: no boundaries supplied.")
     boundaries = np.asarray(boundaries, dtype=float)
@@ -850,6 +860,7 @@ def reconstitute_table(
     in_word_df,
     num_expected_cols=None
 ):
+    """Pivot assigned words into ordered rows with dynamically detected columns."""
 
     df = in_word_df.copy()
 
@@ -945,6 +956,7 @@ def merge_wrapped_entities(table_df):
     output_rows = []
 
     def cell_text(value):
+        """Convert a potentially missing table cell to normalized display text."""
         if pd.isna(value):
             return ""
         text = str(value).strip()
@@ -992,6 +1004,7 @@ def merge_wrapped_entities(table_df):
 
 
 def clean_numeric_value(value):
+    """Normalize a currency-like OCR value to an integer, defaulting invalid text to zero."""
 
     if pd.isna(value):
         return 0
@@ -1031,6 +1044,7 @@ def clean_numeric_value(value):
 
 
 def table_cleaning(in_table_df):
+    """Apply Schedule E headers, normalize values, and remove reconstruction artifacts."""
 
     df = in_table_df.copy()
 
@@ -1162,6 +1176,7 @@ def table_cleaning(in_table_df):
 
 
 def extraction_confidence(df):
+    """Score whether extracted rows contain the identities and values expected in Schedule E."""
 
     if df is None or df.empty:
         return 0.0
@@ -1342,6 +1357,7 @@ def repair_table_numeric_cells_from_source(original_pdf, df):
 
 
 def pdf_attribute_pipeline(in_file):
+    """Inspect a PDF and collect attributes that determine its extraction path."""
 
     type_attributes.clear()
 
@@ -1436,6 +1452,7 @@ def pdf_pipeline(
     visual_debugging=False,
     num_cols=7
 ):
+    """Extract raw line and character data from a PDF using the selected preprocessing path."""
 
     print(
         "---- EXTRACTING DATA FROM PDF ----"
@@ -1833,6 +1850,7 @@ def process_schedule_e(
     force_ocr=None,
     minimum_confidence=0.75
 ):
+    """Extract one Schedule E PDF into a validated table and diagnostic artifacts."""
 
     print(
         "\n============================================"
@@ -1982,6 +2000,7 @@ def process_schedule_e(
 
 
 def process_batch(input_folder, output_folder, working_folder, force_ocr=None):
+    """Process every PDF under an input folder and record outputs or failures."""
     """Process each source PDF in ``input_folder`` into ``output_folder``."""
     input_dir = Path(input_folder)
     output_dir = Path(output_folder)

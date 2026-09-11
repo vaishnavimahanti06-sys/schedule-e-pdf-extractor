@@ -697,6 +697,7 @@ def prepare_pdf_with_pymupdf4llm(
 
 
 def to_rotate(in_page):
+    """Detect whether a PDF page is landscape from character dimensions."""
 
     char_df = pd.DataFrame(
         in_page.chars
@@ -741,6 +742,7 @@ def rotate(
     in_file,
     rotation_degrees=90
 ):
+    """Write a rotated portrait copy of the supplied PDF."""
 
     reader = PdfReader(
         in_file
@@ -788,6 +790,7 @@ def rotate(
 def to_check_decode(
     in_page
 ):
+    """Read the upper-right identifier area used to detect encoded text."""
 
     x = in_page.width
     y = in_page.height
@@ -832,6 +835,7 @@ def to_check_decode(
 
 
 def decode(s):
+    """Decode the document's custom character mapping in text or a DataFrame."""
 
     az_map = {
         chr(c):
@@ -873,6 +877,7 @@ def decode(s):
     }
 
     def _decode_one(x):
+        """Decode and normalize one encoded text value."""
 
         decoded = "".join(
             decode_map.get(
@@ -921,6 +926,7 @@ def decode(s):
 
 
 def to_decode(s):
+    """Determine whether an identifier needs decoding and return its usable value."""
 
     if not s:
 
@@ -987,6 +993,7 @@ def to_decode(s):
 def to_dedup(
     in_page
 ):
+    """Detect duplicate page characters and return a deduplicated character table."""
 
     char_df = pd.DataFrame(
         [
@@ -1034,6 +1041,7 @@ def to_dedup(
 def dedup(
     in_page
 ):
+    """Remove repeated characters from a pdfplumber page for extraction."""
 
     char_df = pd.DataFrame(
         in_page.chars
@@ -1066,6 +1074,7 @@ def dedup(
 def lines(
     in_char_df
 ):
+    """Group positioned characters into ordered text lines and line metadata."""
 
     df = (
         in_char_df.copy()
@@ -1212,12 +1221,14 @@ def to_collapse(
     in_line_df,
     min_all_info_rows=3
 ):
+    """Decide whether data entities span multiple lines and need collapsing."""
 
     df = (
         in_line_df.copy()
     )
 
     def has_all_info(text):
+        """Check whether one line contains identity and value information."""
 
         s = re.sub(
             r"\s+",
@@ -1298,6 +1309,7 @@ def to_collapse(
 def header_delimiter(
     in_line_df
 ):
+    """Locate the table-header delimiter used to separate form text from rows."""
 
     df = (
         in_line_df.copy()
@@ -1691,6 +1703,7 @@ def header_lines(
     in_char_df,
     in_header_df
 ):
+    """Identify likely header lines using form labels and table position."""
 
     horizontal_lines = []
 
@@ -1764,6 +1777,7 @@ def header_lines(
 def classify_headers_with_delimiters(
     in_line_df
 ):
+    """Classify header rows when a reliable visual delimiter is available."""
 
     df = (
         in_line_df
@@ -1847,6 +1861,7 @@ def classify_headers_with_delimiters(
 def classify_headers_no_delimiters_collapsed(
     in_line_df
 ):
+    """Classify headers for multi-line entities without a visual delimiter."""
 
     df = (
         in_line_df
@@ -1952,6 +1967,7 @@ def classify_headers_no_delimiters_collapsed(
 def classify_headers_no_delimiters_uncollapsed(
     in_line_df
 ):
+    """Classify headers for one-line entities without a visual delimiter."""
 
     df = (
         in_line_df.copy()
@@ -1965,6 +1981,7 @@ def classify_headers_no_delimiters_uncollapsed(
 
 
 def classify_headers_two_line_entities(in_line_df):
+    """Mark headers while preserving name and identity lines of two-line entities."""
     """Keep the name line paired with the first P/S + EIN data line."""
     df = in_line_df.sort_values(["page", "line_num"]).copy()
     normalized = (
@@ -1982,6 +1999,7 @@ def classify_headers_two_line_entities(in_line_df):
 def remove_duplicate_headers(
     in_line_df
 ):
+    """Remove repeated form headers that occur after page breaks."""
 
     return (
         in_line_df[
@@ -2011,6 +2029,7 @@ def remove_duplicate_headers(
 def remove_totals(
     in_line_df
 ):
+    """Exclude total and summary lines from the extracted entity data."""
 
     df = (
         in_line_df
@@ -2167,12 +2186,14 @@ def remove_totals(
 def classify_noncollapsed_rows(
     in_line_df
 ):
+    """Label identity, name, and numeric components of one-line data rows."""
 
     df = (
         in_line_df.copy()
     )
 
     def classify_text(text):
+        """Identify which expected Schedule E components occur in one text line."""
 
         original = re.sub(
             r"\s+",
@@ -2278,6 +2299,7 @@ def classify_noncollapsed_rows(
 def collapse_rows(
     in_line_df
 ):
+    """Combine related text lines into logical Schedule E entity rows."""
 
     df = (
         in_line_df
@@ -2300,6 +2322,7 @@ def collapse_rows(
         ein_ind=0,
         other_ind=0
     ):
+        """Append a classified line fragment to the active logical entity."""
 
         if (
             block.empty
@@ -2372,6 +2395,7 @@ def collapse_rows(
     def finalize_entity(
         block
     ):
+        """Finalize the active entity and append it when it contains data."""
 
         if block.empty:
             return
