@@ -2,11 +2,4 @@
 __pycache__/
 *.py[cod]
 .DS_Store
-input/*
-!input/.gitkeep
-output/*
-!output/.gitkeep
-work/*
-!work/.gitkeep
-*.pdf
-*.csv
+
