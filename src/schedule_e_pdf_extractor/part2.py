@@ -772,7 +772,10 @@ def columns_words_no_delimiter(
     widths = work["x1"] - work["x0"]
     widths = widths[np.isfinite(widths) & widths.gt(0)]
     char_width = float(widths.median()) if not widths.empty else 4.0
-    work["new_word"] = work["prev_x1"].isna() | ((work["x0"] - work["prev_x1"]) > max(char_width * 1.5, 2.0))
+    # OCR-generated searchable PDFs commonly encode a word space at only
+    # slightly more than one character width. Preserve those name-word gaps.
+    word_gap_threshold = max(char_width * 1.1, 2.0)
+    work["new_word"] = work["prev_x1"].isna() | ((work["x0"] - work["prev_x1"]) > word_gap_threshold)
     work["word_id"] = work.groupby(["page", "line_num"], sort=False)["new_word"].cumsum()
     words_df = work.groupby(["page", "line_num", "word_id"], sort=False, as_index=False).agg(text=("text", "".join), x0=("x0", "min"), x1=("x1", "max"), top=("top", "min"), bottom=("bottom", "max"))
     words_df["text"] = words_df["text"].str.strip()
@@ -1086,7 +1089,11 @@ def table_cleaning(in_table_df):
 
     if "P/S" in df.columns:
         ps_values = df["P/S"].fillna("").astype(str).str.strip()
-        normalized_ps = ps_values.str.extract(r"^([PS])", expand=False)
+        normalized_ps = (
+            ps_values
+            .str.extract(r"^([PS])", flags=re.IGNORECASE, expand=False)
+            .str.upper()
+        )
         df["P/S"] = normalized_ps.fillna(ps_values)
 
     if df.shape[1] >= 6:

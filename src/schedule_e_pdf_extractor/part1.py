@@ -201,6 +201,18 @@ def native_text_quality(pdf_path):
             "Unicode replacement characters detected"
         )
 
+    # Some PDFs expose an encoded font as apparently readable alphanumeric
+    # text. Treat a layer with neither form anchors nor EINs as unreliable,
+    # so the OCR path can recover the actual table content.
+    if (
+        len(ein_matches) == 0
+        and not schedule_e_found
+        and not part_ii_found
+    ):
+        reasons.append(
+            "Native text lacks Schedule E and EIN anchors"
+        )
+
     if (
         schedule_e_found
         and

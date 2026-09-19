@@ -1,0 +1,106 @@
+Schedule E Part II PDF Extractor - Dependencies
+=================================================
+
+This list is based on the imports and OCR operations used by:
+  src/schedule_e_pdf_extractor/part1.py
+  src/schedule_e_pdf_extractor/part2.py
+
+
+1. Required Python version
+--------------------------
+Python 3.10 or later is recommended.
+
+
+2. Direct Python packages
+-------------------------
+Install these packages in the project's virtual environment:
+
+  pdfplumber
+      Extracts words, characters, and page geometry from PDF files.
+
+  numpy
+      Supports numerical operations used by OCR and column detection.
+
+  pandas
+      Stores, cleans, validates, and exports extracted table data.
+
+  pypdf
+      Provides PdfReader and PdfWriter for PDF processing.
+
+  pymupdf
+      Provides the `pymupdf` module. Used for PDF rendering, page processing,
+      OCR integration, and creating processed PDF files.
+
+  pymupdf4llm
+      Used by the PDF-text processing workflow.
+
+  opencv-python
+      Provides the `cv2` module. Used to rotate pages, improve scan contrast,
+      and remove table lines before OCR.
+
+  pytesseract
+      Python interface that sends page images to the Tesseract OCR engine.
+
+Install all direct Python packages:
+
+  pip install pdfplumber numpy pandas pypdf pymupdf pymupdf4llm opencv-python pytesseract
+
+Or, after requirements.txt includes every package:
+
+  pip install -r requirements.txt
+
+
+3. Required non-Python OCR software
+-----------------------------------
+Tesseract OCR 5.0.0 or later is required. `pytesseract` alone is not
+sufficient: it is only the Python wrapper and calls the installed `tesseract`
+executable. This project was tested with Tesseract 5.5.3.
+
+Tesseract must include English language data because this extractor requests
+English OCR (eng).
+
+macOS installation:
+
+  brew install tesseract
+
+Verify the installation:
+
+  tesseract --version
+  tesseract --list-langs
+
+The output of `tesseract --list-langs` must include:
+
+  eng
+
+If Tesseract is installed in a nonstandard location, configure the executable
+path before the extractor runs. For example:
+
+  pytesseract.pytesseract.tesseract_cmd = "/full/path/to/tesseract"
+
+
+4. Python standard-library modules already included with Python
+---------------------------------------------------------------
+No separate installation is needed for these modules used by the code:
+
+  argparse
+  itertools
+  os
+  pathlib
+  re
+  warnings
+
+
+5. Not required by the current Schedule E Part II code
+-------------------------------------------------------
+The current code does not directly require separate installations of:
+
+  Poppler / pdftotext
+  Ghostscript
+  Java
+  Microsoft Excel
+
+Excel export note:
+  The current extractor writes CSV output. If an Excel-export step uses
+  pandas.DataFrame.to_excel(), install this additional Python package:
+
+  openpyxl
