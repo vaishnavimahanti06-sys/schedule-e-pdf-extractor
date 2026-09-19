@@ -1,0 +1,1 @@
+mixed_13.pdf	ValueError: Extraction confidence is below the output threshold (50.0% < 75.0%). No CSV was written because the extracted table is not reliable.
